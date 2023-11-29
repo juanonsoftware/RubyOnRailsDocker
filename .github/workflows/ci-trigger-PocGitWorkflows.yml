@@ -16,4 +16,5 @@ jobs:
         with:
           workflow: ci-build-push-ror-dockerhub
           repo: juanonsoftware/PocGithubActions
+          ref: refs/heads/main
           token: ${{ vars.GH_DISPATCH_TOKEN }}
