@@ -1,0 +1,9 @@
+# Base Ruby image
+from ruby:alpine
+
+# Update APK and install new package
+# build-base -> to ensure certain gems can be compiled
+RUN apk --update && apk add build-base
+
+# Install new gems
+RUN gem update --system && gem install rails 
