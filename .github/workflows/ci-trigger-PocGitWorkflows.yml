@@ -1,0 +1,19 @@
+name: ci-trigger-PocGitWorkflows
+on:
+  workflow_dispatch:
+  push:
+    branches: [master]
+
+jobs:
+  dispatch:
+    name: Dispatch
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    
+    steps:
+      - name: Invoke workflow in PocGitWorkflows repo
+        uses: benc-uk/workflow-dispatch@v1.2.2
+        with:
+          workflow: ci-build-push-ror-dockerhub
+          repo: juanonsoftware/PocGithubActions
+          token: ${{ secrets.GH_DISPATCH_TOKEN }}
