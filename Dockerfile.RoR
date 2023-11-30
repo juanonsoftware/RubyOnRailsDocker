@@ -2,4 +2,4 @@
 from ruby:3.2.2
 
 # Install new gems
-RUN gem update --system && gem install rails 
+RUN gem update --system && gem install rails

@@ -1,0 +1,8 @@
+# Base Ruby image
+from ruby:3.2.2-alpine3.18
+
+# Install required packages
+RUN apk --no-cache add build-base git tzdata
+
+# Install new gems
+RUN gem update --system && gem install rails 
