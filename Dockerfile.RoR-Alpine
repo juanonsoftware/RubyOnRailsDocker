@@ -4,8 +4,10 @@ from ruby:3.2.2-alpine3.18
 # Install required packages
 # build-base -> build-base: To ensure certain gems can be compiled
 # git -> for git
+RUN apk --no-cache add build-base git tzdata
+
 # vips -> image processing
-RUN apk --no-cache add build-base git tzdata vips
+RUN apk --no-cache add vips
 
 # Install new gems
 RUN gem update --system && gem install rails 
